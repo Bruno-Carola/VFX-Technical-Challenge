@@ -25,7 +25,7 @@ namespace VFXFinancial.WebAPI.Tests.Features.Commands
                 .Options;
 
             await using var context = new VFXFinancialDbContext(options);
-            var mockPublisher = new Mock<IRabbitMQPublisher>();
+            var mockPublisher = new Mock<RabbitMQPublisher>();
             var mockLogger = new Mock<ILogger<CreateExchangeRateCommandHandler>>();
 
             var handler = new CreateExchangeRateCommandHandler(context, mockLogger.Object, mockPublisher.Object);

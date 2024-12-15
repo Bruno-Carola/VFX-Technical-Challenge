@@ -3,7 +3,7 @@ using System.Text;
 
 namespace VFXFinancial.WebApi.Infrastructure.Messaging
 {
-    public class RabbitMQPublisher : IRabbitMQPublisher
+    public class RabbitMQPublisher
     {
         private readonly IModel _channel;
         private readonly ILogger<RabbitMQPublisher> _logger;
