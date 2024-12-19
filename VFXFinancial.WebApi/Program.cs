@@ -40,10 +40,7 @@ builder.Services.AddSingleton<IModel>(sp =>
 builder.Services.AddSingleton<RabbitMQPublisher>();
 
 // Register AlphaVantage API client
-builder.Services.AddHttpClient<IAlphaVantageClient>(client =>
-{
-    client.BaseAddress = new Uri("https://www.alphavantage.co");
-});
+builder.Services.AddHttpClient<IAlphaVantageClient, AlphaVantageClient>();
 
 // Add controllers
 builder.Services.AddControllers();

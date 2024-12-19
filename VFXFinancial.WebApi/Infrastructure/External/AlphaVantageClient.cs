@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using VFXFinancial.WebApi.Infrastructure.External;
 using VFXFinancial.WebApi.Models.Domain;
 using VFXFinancial.WebApi.Models.External;
 
@@ -7,7 +8,7 @@ namespace VFXFinancial.WebApi.Infrastructure.ThirdParty
     /// <summary>
     /// AlphaVantageClient
     /// </summary>
-    public class AlphaVantageClient
+    public class AlphaVantageClient : IAlphaVantageClient
     {
         private readonly HttpClient _httpClient;
         private readonly ILogger<AlphaVantageClient> _logger;
@@ -30,7 +31,7 @@ namespace VFXFinancial.WebApi.Infrastructure.ThirdParty
         /// <param name="FromCurrency">From currency.</param>
         /// <param name="ToCurrency">To currency.</param>
         /// <returns></returns>
-        public async Task<ExchangeRate?> FetchExchangeRateAsync(string FromCurrency, string ToCurrency)
+        public async Task<ExchangeRate> FetchExchangeRateAsync(string FromCurrency, string ToCurrency)
         {
             try
             {

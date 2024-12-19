@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using VFXFinancial.WebApi.Data;
 using VFXFinancial.WebApi.Features.ExchangeRate.Queries;
 using VFXFinancial.WebApi.Infrastructure.External;
+using VFXFinancial.WebApi.Infrastructure.ThirdParty;
 using VFXFinancial.WebApi.Models.DTOs;
 
 namespace VFXFinancial.WebApi.Features.ExchangeRates.Handlers
